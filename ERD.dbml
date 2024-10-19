@@ -1,0 +1,73 @@
+Table User {
+  id int pk
+  username varchar
+  password varchar
+  email varchar
+  first_name varchar
+  last_name varchar
+  //other django fields
+}
+Table Volunteer {
+  //extends user
+  id int pk
+  phone_number varchar
+  location varchar
+  user_id int [ref: - "User"."id"]
+}
+Table Organization {
+  //extends user
+  id int pk
+  name varchar
+  description varchar
+  location varchar
+  user_id int [ref: - "User"."id"]
+}
+Table Opportunity {
+  id int pk
+  title varchar
+  location varchar
+  description varchar
+  start_date datetime
+  end_date datetime
+  organization_id int [ref: > "Organization"."id"]
+}
+Table Volunteer_Opportunity {
+  id int pk
+  volunteer_id int [ref: > "Volunteer"."id"]
+  opportunity_id int [ref: > "Opportunity"."id"]
+}
+
+Table Skill {
+  id int pk
+  name varchar
+}
+Table User_Skill {
+  id int pk
+  user_id int [ref: > "User"."id"]
+  skill_id int [ref: > "Skill"."id"]
+}
+Table Opportunity_Skill {
+  id int pk
+  opportunity_id int [ref: > "Opportunity"."id"]
+  skill_id int [ref: > "Skill"."id"]
+}
+
+//stretch goal tables
+Table Time_Log {
+  id int pk
+  user_id int [ref: < "User"."id"]
+  opportunity_id int [ref: < "Opportunity"."id"]
+  start_time datetime
+  end_time datetime
+  description varchar
+}
+Table Tag {
+  id int pk
+  name varchar
+}
+Table Opportunity_Tag {
+  id int pk
+  opportunity_id int [ref: > "Opportunity"."id"]
+  tag_id int [ref: > "Tag"."id"]
+}
+
