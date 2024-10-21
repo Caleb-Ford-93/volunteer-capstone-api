@@ -1,0 +1,44 @@
+[
+  {
+    "model": "volunteerapi.skill",
+    "pk": 1,
+    "fields": {
+      "name": "Construction"
+    }
+  },
+  {
+    "model": "volunteerapi.skill",
+    "pk": 2,
+    "fields": {
+      "name": "Social"
+    }
+  },
+  {
+    "model": "volunteerapi.skill",
+    "pk": 3,
+    "fields": {
+      "name": "Programming"
+    }
+  },
+  {
+    "model": "volunteerapi.skill",
+    "pk": 4,
+    "fields": {
+      "name": "Gardening"
+    }
+  },
+  {
+    "model": "volunteerapi.skill",
+    "pk": 5,
+    "fields": {
+      "name": "Landscaping"
+    }
+  },
+  {
+    "model": "volunteerapi.skill",
+    "pk": 6,
+    "fields": {
+      "name": "Cooking"
+    }
+  }
+]

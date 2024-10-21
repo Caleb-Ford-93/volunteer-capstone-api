@@ -1,0 +1,26 @@
+[
+  {
+    "model": "volunteerapi.volunteeropportunity",
+    "pk": 1,
+    "fields": {
+      "volunteer": 1,
+      "opportunity": 2
+    }
+  },
+  {
+    "model": "volunteerapi.volunteeropportunity",
+    "pk": 2,
+    "fields": {
+      "volunteer": 2,
+      "opportunity": 4
+    }
+  },
+  {
+    "model": "volunteerapi.volunteeropportunity",
+    "pk": 3,
+    "fields": {
+      "volunteer": 1,
+      "opportunity": 3
+    }
+  }
+]
