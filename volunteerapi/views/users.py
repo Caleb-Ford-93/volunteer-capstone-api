@@ -6,6 +6,7 @@ from rest_framework.authtoken.models import Token
 from ..models import Organization, Volunteer
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+from django.contrib.auth.hashers import check_password
 
 
 class UserSerializer(serializers.ModelSerializer):
