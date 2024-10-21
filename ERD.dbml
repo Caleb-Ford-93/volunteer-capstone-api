@@ -41,9 +41,9 @@ Table Skill {
   id int pk
   name varchar
 }
-Table User_Skill {
+Table Volunteer_Skill {
   id int pk
-  user_id int [ref: > "User"."id"]
+  volunteer_id int [ref: > "Volunteer"."id"]
   skill_id int [ref: > "Skill"."id"]
 }
 Table Opportunity_Skill {
