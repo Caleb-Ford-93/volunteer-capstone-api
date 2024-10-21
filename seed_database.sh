@@ -7,4 +7,5 @@ python3 manage.py makemigrations volunteerapi
 python3 manage.py migrate volunteerapi
 python3 manage.py loaddata users
 python3 manage.py loaddata tokens
-
+python3 manage.py loaddata organizations
+python3 manage.py loaddata volunteers
