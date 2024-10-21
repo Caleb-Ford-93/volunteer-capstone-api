@@ -1,0 +1,62 @@
+[
+  {
+    "model": "volunteerapi.organization",
+    "pk": 1,
+    "fields": {
+      "name": "Acme Nonprofit",
+      "description": "A leading nonprofit organization dedicated to community service.",
+      "location": "New York, NY",
+      "user": 3,
+      "created_at": "2023-10-21T12:00:00Z",
+      "updated_at": "2023-10-21T12:00:00Z"
+    }
+  },
+  {
+    "model": "volunteerapi.organization",
+    "pk": 2,
+    "fields": {
+      "name": "Helping Hands Charity",
+      "description": "Providing aid and support to those in need.",
+      "location": "Los Angeles, CA",
+      "user": 4,
+      "created_at": "2023-10-21T12:00:00Z",
+      "updated_at": "2023-10-21T12:00:00Z"
+    }
+  },
+  {
+    "model": "volunteerapi.organization",
+    "pk": 3,
+    "fields": {
+      "name": "Community Outreach Center",
+      "description": "Empowering local communities through volunteer efforts.",
+      "location": "Chicago, IL",
+      "user": 7,
+      "created_at": "2023-10-21T12:00:00Z",
+      "updated_at": "2023-10-21T12:00:00Z"
+    }
+  },
+  {
+    "model": "volunteerapi.organization",
+    "pk": 4,
+    "fields": {
+      "name": "Green Initiative Foundation",
+      "description": "Promoting sustainable practices and environmental conservation.",
+      "location": "Seattle, WA",
+      "user": 9,
+      "created_at": "2023-10-21T12:00:00Z",
+      "updated_at": "2023-10-21T12:00:00Z"
+    }
+  },
+  {
+    "model": "volunteerapi.organization",
+    "pk": 5,
+    "fields": {
+      "name": "Helping Hearts Foundation",
+      "description": "Providing aid and support for local communities.",
+      "location": "Miami, FL",
+      "user": 2,
+      "created_at": "2023-10-21T12:00:00Z",
+      "updated_at": "2023-10-21T12:00:00Z"
+    }
+  }
+]
