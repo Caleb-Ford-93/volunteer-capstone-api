@@ -4,9 +4,8 @@ from volunteerapi.models import (
     VolunteerOpportunity,
     Volunteer,
 )
-from django.contrib.auth.models import User
 from rest_framework import viewsets, status
-from rest_framework import serializers, permissions
+from rest_framework import serializers
 from rest_framework.response import Response
 
 
