@@ -22,5 +22,13 @@
       "volunteer": 1,
       "opportunity": 3
     }
+  },
+  {
+    "model": "volunteerapi.volunteeropportunity",
+    "pk": 4,
+    "fields": {
+      "volunteer": 1,
+      "opportunity": 1
+    }
   }
 ]
