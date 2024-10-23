@@ -1,10 +1,10 @@
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from volunteerapi.views import UserViewSet
+from volunteerapi.views import UserViewSet, OpportunityViewSet
 
 router = routers.DefaultRouter(trailing_slash=False)
-
+router.register(r"opportunities", OpportunityViewSet, "opportunity")
 urlpatterns = [
     path("", include(router.urls)),
     path("login", UserViewSet.as_view({"post": "user_login"}), name="login"),
