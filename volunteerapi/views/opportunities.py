@@ -32,7 +32,9 @@ class OpportunityViewSet(viewsets.ViewSet):
 
         try:
             opportunity = Opportunity.objects.get(pk=pk)
-            serializer = OpportunitySerializer(opportunity)
+            serializer = OpportunitySerializer(
+                opportunity, many=False, context={"request": request}
+            )
             return Response(serializer.data, status=status.HTTP_200_OK)
         except Opportunity.DoesNotExist:
             return Response({}, status=status.HTTP_404_NOT_FOUND)
