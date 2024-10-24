@@ -10,6 +10,7 @@ from rest_framework import serializers
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from .opportunities import OpportunitySerializer
+from .skills import SkillSerializer
 
 
 class ProfileViewSet(viewsets.ViewSet):
@@ -107,12 +108,14 @@ class ProfileViewSet(viewsets.ViewSet):
 
 
 class VolunteerSerializer(serializers.ModelSerializer):
+    skills = SkillSerializer(many=True, read_only=True)
 
     class Meta:
         model = Volunteer
         fields = (
             "phone_number",
             "location",
+            "skills",
         )
 
 

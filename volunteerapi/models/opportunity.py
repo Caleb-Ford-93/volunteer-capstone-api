@@ -10,4 +10,6 @@ class Opportunity(models.Model):
     organization = models.ForeignKey(
         "Organization", on_delete=models.CASCADE, related_name="organization"
     )
-    skills = models.ManyToManyField("Skill", related_name="opportunities")
+    skills = models.ManyToManyField(
+        "Skill", through="Opportunity_Skill", related_name="opportunities"
+    )

@@ -51,6 +51,7 @@ class OpportunityViewSet(viewsets.ViewSet):
                 end_date=request.data.get("end_date"),
                 organization=organization,
             )
+            opportunity.skills.set(request.data.get("skills"))
             return Response({}, status=status.HTTP_201_CREATED)
         else:
             return Response({}, status=status.HTTP_401_UNAUTHORIZED)
@@ -67,6 +68,7 @@ class OpportunityViewSet(viewsets.ViewSet):
                     opportunity.start_date = request.data["start_date"]
                     opportunity.end_date = request.data["end_date"]
                     opportunity.save()
+                    opportunity.skills.set(request.data.get("skills"))
                     return Response({}, status=status.HTTP_204_NO_CONTENT)
                 else:
                     return Response(
