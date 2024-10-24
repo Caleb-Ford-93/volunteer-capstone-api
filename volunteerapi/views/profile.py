@@ -23,6 +23,34 @@ class ProfileViewSet(viewsets.ViewSet):
             serializer = VolunteerProfileSerializer(current_user)
             return Response(serializer.data, status=status.HTTP_200_OK)
 
+    def update(self, request, pk=None):
+        current_user = request.user
+        if current_user.is_staff:
+            user = User.objects.get(pk=pk)
+            user.email = request.data["email"]
+            user.username = request.data["email"]
+            user.save()
+            organization = Organization.objects.get(user=current_user)
+            organization.name = request.data["name"]
+            organization.location = request.data["location"]
+            organization.description = request.data["description"]
+            organization.save()
+            serializer = OrganizationProfileSerializer(user)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        else:
+            user = User.objects.get(pk=pk)
+            user.email = request.data["email"]
+            user.username = request.data["email"]
+            user.first_name = request.data["firstName"]
+            user.last_name = request.data["lastName"]
+            user.save()
+            volunteer = Volunteer.objects.get(user=current_user)
+            volunteer.phone_number = request.data["phoneNumber"]
+            volunteer.location = request.data["location"]
+            volunteer.save()
+            serializer = VolunteerProfileSerializer(user)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+
     @action(methods=["get", "post", "delete"], detail=False)
     def volunteer(self, request):
         """Methods for manipulating opportunities a volunteer has signed up for"""
