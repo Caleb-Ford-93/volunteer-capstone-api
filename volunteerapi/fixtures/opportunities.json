@@ -34,7 +34,8 @@
       "description": "Assist with feeding and caring for animals at the local shelter.",
       "start_date": "2024-11-20",
       "end_date": "2024-11-21",
-      "organization": 2
+      "organization": 2,
+      "skills": [2, 3]
     }
   },
   {
@@ -46,7 +47,8 @@
       "description": "Help collect and distribute school supplies for underprivileged children.",
       "start_date": "2024-12-01",
       "end_date": "2024-12-05",
-      "organization": 2
+      "organization": 2,
+      "skills": [2, 6]
     }
   },
   {
@@ -58,7 +60,8 @@
       "description": "Assist with serving meals and organizing donations for the shelter.",
       "start_date": "2024-12-15",
       "end_date": "2024-12-20",
-      "organization": 3
+      "organization": 3,
+      "skills": [2]
     }
   },
   {
@@ -70,7 +73,8 @@
       "description": "Help collect and distribute toys for children in need during the holidays.",
       "start_date": "2024-12-20",
       "end_date": "2024-12-25",
-      "organization": 3
+      "organization": 3,
+      "skills":[2]
     }
   },
   {
@@ -82,7 +86,8 @@
       "description": "Visit with senior citizens and assist with activities.",
       "start_date": "2024-12-18",
       "end_date": "2024-12-19",
-      "organization": 4
+      "organization": 4,
+      "skills":[2]
     }
   },
   {
@@ -94,7 +99,8 @@
       "description": "Help plant trees and beautify the park.",
       "start_date": "2024-11-25",
       "end_date": "2024-11-27",
-      "organization": 4
+      "organization": 4,
+      "skills":[4, 5, 2]
     }
   },
   {
@@ -106,7 +112,8 @@
       "description": "Tutor children in various subjects to help them succeed academically.",
       "start_date": "2024-11-28",
       "end_date": "2024-12-02",
-      "organization": 5
+      "organization": 5,
+      "skills":[2, 3]
     }
   },
   {
@@ -118,7 +125,8 @@
       "description": "Assist in assembling and distributing holiday food baskets.",
       "start_date": "2024-12-10",
       "end_date": "2024-12-12",
-      "organization": 5
+      "organization": 5,
+      "skills":[2, 6]
     }
   }
 ]
