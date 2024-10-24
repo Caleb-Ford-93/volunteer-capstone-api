@@ -7,6 +7,7 @@ from volunteerapi.models import (
 from rest_framework import viewsets, status
 from rest_framework import serializers
 from rest_framework.response import Response
+from .skills import SkillSerializer
 
 
 class OpportunityViewSet(viewsets.ViewSet):
@@ -106,6 +107,7 @@ class OpportunityOrganizationSerializer(serializers.ModelSerializer):
 class OpportunitySerializer(serializers.ModelSerializer):
     organization = OpportunityOrganizationSerializer(many=False, read_only=True)
     is_attending = serializers.SerializerMethodField(read_only=True)
+    skills = SkillSerializer(many=True, read_only=True)
 
     class Meta:
         model = Opportunity
@@ -118,7 +120,9 @@ class OpportunitySerializer(serializers.ModelSerializer):
             "end_date",
             "organization",
             "is_attending",
+            "skills",
         ]
+        depth = 1
 
     def get_is_attending(self, obj):
         user = self.context["request"].user
