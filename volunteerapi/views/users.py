@@ -8,7 +8,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
 
-
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -81,7 +80,8 @@ class UserViewSet(viewsets.ViewSet):
         if user:
             token = Token.objects.get(user=user)
             return Response(
-                {"token": token.key, "valid": True}, status=status.HTTP_200_OK
+                {"token": token.key, "valid": True, "user_type": user.is_staff},
+                status=status.HTTP_200_OK,
             )
         else:
             return Response(
