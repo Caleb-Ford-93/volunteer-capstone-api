@@ -67,7 +67,10 @@ class UserViewSet(viewsets.ViewSet):
                     organization_serializer.save(user=user)
 
             token, created = Token.objects.get_or_create(user=user)
-            return Response({"token": token.key}, status=status.HTTP_201_CREATED)
+            return Response(
+                {"token": token.key, "valid": True, "user_type": user.is_staff},
+                status=status.HTTP_201_CREATED,
+            )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     @action(detail=False, methods=["post"], url_path="login")
