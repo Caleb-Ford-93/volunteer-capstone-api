@@ -48,6 +48,7 @@ class ProfileViewSet(viewsets.ViewSet):
             volunteer.phone_number = request.data["phoneNumber"]
             volunteer.location = request.data["location"]
             volunteer.save()
+            volunteer.skills.set(request.data.get("skills"))
             serializer = VolunteerProfileSerializer(user)
             return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -124,7 +125,7 @@ class ProfileViewSet(viewsets.ViewSet):
         try:
             organization_opportunities = Opportunity.objects.filter(
                 organization=organization
-            )
+            ).order_by("start_date")
             serializer = OpportunitySerializer(
                 organization_opportunities, many=True, context={"request": request}
             )
