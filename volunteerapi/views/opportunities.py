@@ -26,7 +26,12 @@ class OpportunityViewSet(viewsets.ViewSet):
         serializer = OpportunitySerializer(
             opportunities, many=True, context={"request": request}
         )
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        filtered_data = [
+            opportunity
+            for opportunity in serializer.data
+            if not opportunity.get("is_attending")
+        ]
+        return Response(filtered_data, status=status.HTTP_200_OK)
 
     def retrieve(self, request, pk=None):
 
