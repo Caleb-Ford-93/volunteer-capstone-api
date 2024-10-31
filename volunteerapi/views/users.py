@@ -88,5 +88,5 @@ class UserViewSet(viewsets.ViewSet):
             )
         else:
             return Response(
-                {"error": "Invalid Credentials"}, status=status.HTTP_400_BAD_REQUEST
+                {"error": "Invalid Credentials"}, status=status.HTTP_404_NOT_FOUND
             )
